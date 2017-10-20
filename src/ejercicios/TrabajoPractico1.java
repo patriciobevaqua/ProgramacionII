@@ -85,7 +85,12 @@ public class TrabajoPractico1 {
      */
     public void ejercicio4() {
         List <Integer> listaEnteros = new ArrayList();
-        
+                listaEnteros.add(1);
+                listaEnteros.add(2);
+                listaEnteros.add(3);
+                listaEnteros.add(4);
+                listaEnteros.add(5);
+
         
         
         System.out.println("Iterando Listas forma 1");
