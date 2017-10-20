@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Arreglos y Listas
  *
- * @author arielp
+ * @author 
  */
 public class TrabajoPractico1 {
 
@@ -84,6 +84,30 @@ public class TrabajoPractico1 {
      * las 3 formas
      */
     public void ejercicio4() {
+        List <Integer> listaEnteros = new ArrayList();
+        
+        
+        
+        System.out.println("Iterando Listas forma 1");
+        for (int i = 0; i < listaEnteros.size(); i++) {
+            Integer numero = listaEnteros.get(i);
+            System.out.println(numero);
+        }
+        System.out.println("\n");
 
+        System.out.println("Iterando Listas forma 2");
+        for (Integer numeroi : listaEnteros) {
+            System.out.println(numeroi);
+        }
+
+        System.out.println("Iterando Listas forma 3 (Iterador)");
+        Iterator<Integer> iterador = listaEnteros.iterator();
+        while (iterador.hasNext()) {
+            System.out.println(iterador.next());
+        }
+        
+        
+        
+        
     }
 }
