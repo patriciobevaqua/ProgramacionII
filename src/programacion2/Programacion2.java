@@ -1,5 +1,6 @@
 package programacion2;
 
+import ejercicios.TrabajoPractico1;
 import ejercicios.TrabajoPractico3;
 import java.util.List;
 import modelos.DetallePedido;
@@ -10,6 +11,10 @@ public class Programacion2 {
 
     public static void main(String[] args) throws Exception {
         TrabajoPractico3 practico = new TrabajoPractico3();
+        TrabajoPractico1 practico1=new TrabajoPractico1();
+        
+        practico1.ejercicio3();
+        practico1.ejercicio4();
         
         Pedido pedido;
         
