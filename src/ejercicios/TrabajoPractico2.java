@@ -74,7 +74,29 @@ public class TrabajoPractico2 {
     /**
      * Crear una excepcion propia y capturarla y mostrar su contenido.
      */
-    public void ejercicio6() {
+//    public void ejercicio6() {
+//        System.out.println("EJERCICIO 6 ");
+//    }
+
+    /**
+     *
+     * @param a numrador
+     * @param b denomminador
+     * @return retorna la división a/b
+     * @throws Exception refiere a la situacion en que el denominador b es igual
+     * a cero
+     */
+    public double dividir(double a, double b) throws Exception {
         System.out.println("EJERCICIO 6 ");
+
+        if (b == 0) {
+            throw new Exception("El argumento b no puede ser 0");
+        }
+
+        return a / b;
     }
+
+//Excepciones
+//http://elvex.ugr.es/decsai/java/pdf/B2-excepciones.pdf
+//http://cursohibernate.es/doku.php?id=patrones:excepciones
 }

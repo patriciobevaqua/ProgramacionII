@@ -23,8 +23,8 @@ public class Programacion2 {
         practico2.ejercicio3();
         practico2.ejercicio4();
         practico2.ejercicio5();
-        practico2.ejercicio6();
-        
+        //practico2.ejercicio6();
+        practico2.dividir(2, 0);
         TrabajoPractico3 practico = new TrabajoPractico3();
         
         
