@@ -1,5 +1,6 @@
 package ejercicios;
 
+import excepciones.ExcepcionBevaqua;
 import excepciones.ExcepcionSimpatica;
 
 /**
@@ -74,9 +75,17 @@ public class TrabajoPractico2 {
     /**
      * Crear una excepcion propia y capturarla y mostrar su contenido.
      */
-//    public void ejercicio6() {
-//        System.out.println("EJERCICIO 6 ");
-//    }
+    public void ejercicio6() throws Exception {
+        System.out.println("EJERCICIO 6 ");
+        try {
+            System.out.println("Primera parte");
+            throw new ExcepcionBevaqua("Excepción creada por mi para el ejercicio 6");
+
+        } catch (ExcepcionBevaqua e) {
+            System.out.println("excepcion:" + e);
+        }
+
+    }
 
     /**
      *
@@ -88,11 +97,13 @@ public class TrabajoPractico2 {
      */
     public double dividir(double a, double b) throws Exception {
         System.out.println("EJERCICIO 6 ");
-
-        if (b == 0) {
-            throw new Exception("El argumento b no puede ser 0");
+        try {
+            if (b == 0) {
+                throw new Exception("El argumento b no puede ser 0");
+            }
+        } catch (ArithmeticException ex) {
+            System.out.println(" Error matematico: " + ex);
         }
-
         return a / b;
     }
 

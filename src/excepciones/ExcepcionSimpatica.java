@@ -10,3 +10,4 @@ public class ExcepcionSimpatica extends Exception {
         super(mensaje);
     }
 }
+
