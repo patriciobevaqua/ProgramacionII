@@ -13,7 +13,30 @@ import modelos.Pedido;
  * @author arielp
  */
 public class TrabajoPractico3 {
-    
+    public static void main(String[] args) {  //creo el psvm para validar los metodos de la clase
+        TrabajoPractico3 practico = new TrabajoPractico3();
+
+        Pedido pedido;
+
+        pedido = practico.ejercicio2();
+
+        System.out.println("Nombre Cliente");
+        System.out.println(pedido.getCliente().getNombre());
+
+        System.out.println("Mercaderia 2");
+        System.out.println(pedido.getDetalles().get(1).getMercaderia().getNombre());
+
+        List<DetallePedido> listaDetalles = pedido.getDetalles();
+        DetallePedido detallePedido2 = listaDetalles.get(1);
+        Mercaderia mercaderia = detallePedido2.getMercaderia();
+
+        System.out.println("Mercaderia 2 - Ordenada");
+        System.out.println(mercaderia.getNombre());
+
+        System.out.println("Cantidad de Botellas");
+        System.out.println(pedido.getDetalles().get(1).getCantidad());
+
+    }
     public void ejercicio1() {
         Cliente cliente1 = new Cliente();
         cliente1.setNombre("Leonel Messi");
@@ -81,4 +104,15 @@ public class TrabajoPractico3 {
         return pedido1;
         
     }
+    
+     /**
+     * LLamar al metodo del ejercicio 2 para crear un pedido completo
+     * y agregar un nuevo detalle que incluya una mercaderia nueva
+     */
+    public void ejercicio3() {
+        
+    }
+
+    
+    
 }

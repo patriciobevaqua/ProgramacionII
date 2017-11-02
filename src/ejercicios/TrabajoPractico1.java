@@ -11,6 +11,13 @@ import java.util.List;
  */
 public class TrabajoPractico1 {
 
+    public static void main(String[] args) { //creo el psvm para validar los metodos de la clase
+        TrabajoPractico1 practico1 = new TrabajoPractico1();
+        practico1.ejercicio3();
+        practico1.ejercicio4();
+
+    }
+
     public void ejercicio1() {
         String[] palabras = new String[4];
         palabras[0] = "Esto";

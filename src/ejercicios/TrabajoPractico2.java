@@ -10,6 +10,20 @@ import excepciones.ExcepcionSimpatica;
  */
 public class TrabajoPractico2 {
 
+    public static void main(String[] args) throws Exception {  //creo el psvm para validar los metodos de la clase
+        TrabajoPractico2 practico2 = new TrabajoPractico2();
+        practico2.ejercicio1();
+        practico2.ejercicio2();
+        practico2.ejercicio3();
+        //practico2.ejercicio4();
+        practico2.ejercicio5();
+        
+        practico2.ejercicio6();
+        practico2.dividir(2, 0);
+       
+
+    }
+
     public void ejercicio1() {
         System.out.println("EJERCICIO 1 ");
 
@@ -81,7 +95,7 @@ public class TrabajoPractico2 {
             System.out.println("Primera parte");
             throw new ExcepcionBevaqua("Excepción creada por mi para el ejercicio 6");
 
-        } catch (ExcepcionBevaqua e) {
+        } catch (ExcepcionBevaqua e) {  // en e guarda el objeto
             System.out.println("excepcion:" + e);
         }
 
@@ -99,9 +113,9 @@ public class TrabajoPractico2 {
         System.out.println("EJERCICIO 6 ");
         try {
             if (b == 0) {
-                throw new Exception("El argumento b no puede ser 0");
+                throw new ExcepcionBevaqua("El argumento b no puede ser 0");
             }
-        } catch (ArithmeticException ex) {
+        } catch (ExcepcionBevaqua ex) {
             System.out.println(" Error matematico: " + ex);
         }
         return a / b;

@@ -18,8 +18,8 @@ public class ConexionesBaseDeDatos {
         fuenteDatos.setServerName("localhost");
         fuenteDatos.setPort(3306);
         fuenteDatos.setDatabaseName("bd_programacion2");
-        fuenteDatos.setUser("programacion2");
-        fuenteDatos.setPassword("password");
+        fuenteDatos.setUser("root");
+        fuenteDatos.setPassword("");
 
         Connection conexion = null;
         try {
