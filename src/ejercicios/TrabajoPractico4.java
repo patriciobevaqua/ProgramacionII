@@ -16,7 +16,7 @@ public class TrabajoPractico4 {
     public static void main(String[] args) {
         TrabajoPractico4 ejercicio3 = new TrabajoPractico4();
         ejercicio3.ejercicio3();
-        
+
     }
 
     /**
@@ -100,10 +100,10 @@ public class TrabajoPractico4 {
 
         }
 
-        for (int i = 0; i <= clientes.size(); i++) {
-          
-                Cliente c = clientes.get(i);
-                  if (c.getId() % 2 != 0) {
+        for (int i = 0; i < clientes.size(); i++) {
+
+            Cliente c = clientes.get(i);
+            if (c.getId() % 2 != 0) {
                 System.out.println(c.getId());
                 System.out.println(c.getNombre());
                 System.out.println(c.getEmail());
