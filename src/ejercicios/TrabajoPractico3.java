@@ -19,6 +19,7 @@ public class TrabajoPractico3 {
         Pedido pedido;
 
         pedido = practico.ejercicio2();
+        practico.ejercicio3();
 
         System.out.println("Nombre Cliente");
         System.out.println(pedido.getCliente().getNombre());
@@ -36,6 +37,7 @@ public class TrabajoPractico3 {
         System.out.println("Cantidad de Botellas");
         System.out.println(pedido.getDetalles().get(1).getCantidad());
 
+        //practico.ejercicio2();
     }
     public void ejercicio1() {
         Cliente cliente1 = new Cliente();
@@ -110,6 +112,28 @@ public class TrabajoPractico3 {
      * y agregar un nuevo detalle que incluya una mercaderia nueva
      */
     public void ejercicio3() {
+        Pedido pedidoEjercicio2= this.ejercicio2();
+        Mercaderia mercaderiaNueva= new Mercaderia();
+        mercaderiaNueva.setCodigo("C004");
+        mercaderiaNueva.setNombre("Azucar");
+        
+        //Crear un detalle con la mercaderia anterior
+        DetallePedido pedido3= new DetallePedido();
+        pedido3.setMercaderia(mercaderiaNueva);
+        pedido3.setCantidad(3);
+        
+        pedidoEjercicio2.getDetalles().add(pedido3);
+             
+        System.out.println(""+ pedidoEjercicio2.getDetalles().get(2).getCantidad());
+        
+        
+        System.out.println(""+ pedidoEjercicio2.getDetalles().get(2).getMercaderia().getNombre());
+        
+        pedidoEjercicio2.getDetalles().get(0).setCantidad(17);
+        
+        //cambiar la cantidad del pedido uno
+        System.out.println("Nueva Cantidad: "+ pedidoEjercicio2.getDetalles().get(0).getCantidad());
+        
         
     }
 
