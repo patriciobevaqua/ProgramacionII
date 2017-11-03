@@ -47,6 +47,7 @@ public class ConexionesBaseDeDatos {
     /* Clase 01-09-17 */
     /**
      * Imprime los clientes que existen en la base de datos
+     *
      * @throws Exception
      */
     public void leerClientes() throws Exception {
@@ -66,6 +67,7 @@ public class ConexionesBaseDeDatos {
     //14-09-17      busca en la base de datos y devuelve una lista de clientes
     /**
      * Crea una lista de clientes con los clientes obtenidos de la base de datos
+     *
      * @return devuelve una lista de clientes
      * @throws Exception
      */
@@ -149,7 +151,6 @@ public class ConexionesBaseDeDatos {
     }
 
     /* Clase 07-09-17 */
-
     public Cliente buscarClientePorCuit(String cuit) {
         Cliente cliente = new Cliente();
         Connection conexion = this.getConexionMysql();
@@ -225,7 +226,7 @@ public class ConexionesBaseDeDatos {
                 Mercaderia mercaderia = new Mercaderia();
                 mercaderia.setCodigo(rs.getString("codigo"));
                 mercaderia.setNombre(rs.getString("nombre"));
-                mercaderia.setPeso(rs.getFloat("peso")); 
+                mercaderia.setPeso(rs.getFloat("peso"));
                 mercaderia.setValor(rs.getFloat("valor"));
 
                 mercaderias.add(mercaderia);
