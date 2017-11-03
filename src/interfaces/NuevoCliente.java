@@ -31,28 +31,31 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         textFieldNombre = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
+        jLabelNombre = new javax.swing.JLabel();
         textFieldEmail = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabelEmail = new javax.swing.JLabel();
+        jLabelCuit = new javax.swing.JLabel();
         textFieldCuit = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButtonGuardar = new javax.swing.JButton();
+        jButtonCancelar = new javax.swing.JButton();
 
-        jLabel2.setText("Nombre");
+        jLabelNombre.setText("Nombre");
+        jLabelNombre.setToolTipText("Nombre");
 
-        jLabel3.setText("Email");
+        jLabelEmail.setText("Email");
+        jLabelEmail.setToolTipText("Email");
 
-        jLabel4.setText("Cuit");
+        jLabelCuit.setText("Cuit");
+        jLabelCuit.setToolTipText("Cuit");
 
-        jButton1.setText("GUARDAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonGuardar.setText("GUARDAR");
+        jButtonGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonGuardarActionPerformed(evt);
             }
         });
 
-        jButton2.setText("CANCELAR");
+        jButtonCancelar.setText("CANCELAR");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -62,24 +65,24 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(78, 78, 78)
-                        .addComponent(jButton1)
+                        .addComponent(jButtonGuardar)
                         .addGap(36, 36, 36)
-                        .addComponent(jButton2))
+                        .addComponent(jButtonCancelar))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
+                                    .addComponent(jLabelEmail)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(textFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
+                                    .addComponent(jLabelNombre)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(textFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(21, 21, 21)
-                                .addComponent(jLabel4)
+                                .addComponent(jLabelCuit)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(textFieldCuit, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(62, Short.MAX_VALUE))
@@ -89,31 +92,31 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(jLabelNombre)
                     .addComponent(textFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(jLabelEmail)
                     .addComponent(textFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
+                    .addComponent(jLabelCuit)
                     .addComponent(textFieldCuit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(84, 84, 84)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButtonGuardar)
+                    .addComponent(jButtonCancelar))
                 .addContainerGap(55, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
         System.out.println("Click en Guardar");
         
         Cliente cliente = new Cliente();
-        cliente.setNombre(this.textFieldNombre.getText());
+        cliente.setNombre(this.textFieldNombre.getText()); //lo que está entre parentesis toma el dato del textField
         cliente.setEmail(this.textFieldEmail.getText());
         cliente.setCuit(this.textFieldCuit.getText());
         
@@ -124,15 +127,15 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
         
         this.setVisible(false);
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonGuardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton jButtonCancelar;
+    private javax.swing.JButton jButtonGuardar;
+    private javax.swing.JLabel jLabelCuit;
+    private javax.swing.JLabel jLabelEmail;
+    private javax.swing.JLabel jLabelNombre;
     private javax.swing.JTextField textFieldCuit;
     private javax.swing.JTextField textFieldEmail;
     private javax.swing.JTextField textFieldNombre;

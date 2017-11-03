@@ -99,14 +99,14 @@ public class TrabajoPractico1 {
         listaEnteros.add(4);
         listaEnteros.add(5);
 
-        System.out.println("Iterando Listas forma 1");
+        System.out.println("Iterando Listas forma 1 -con un for i-");
         for (int i = 0; i < listaEnteros.size(); i++) {
             Integer numero = listaEnteros.get(i);
             System.out.println(numero);
         }
         System.out.println("\n");
 
-        System.out.println("Iterando Listas forma 2");
+        System.out.println("Iterando Listas forma 2 -con un for each-");
         for (Integer numeroi : listaEnteros) {
             System.out.println(numeroi);
         }

@@ -1,7 +1,8 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+Como conectar ventanas en netbeans java.cc
+https://www.youtube.com/watch?v=Ha6YBbK65XI
+Para inicio de sesion:
+http://pharalax.com/blog/java-y-netbeans-i-formulario-de-login/
  */
 package interfaces;
 

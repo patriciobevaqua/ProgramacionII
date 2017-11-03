@@ -44,7 +44,11 @@ public class ConexionesBaseDeDatos {
         return conexion;
     }
 
-     /* Clase 01-09-17 */
+    /* Clase 01-09-17 */
+    /**
+     * Imprime los clientes que existen en la base de datos
+     * @throws Exception
+     */
     public void leerClientes() throws Exception {
         Connection conexion = this.getConexionMysql();
         Statement statement = conexion.createStatement();
@@ -58,9 +62,13 @@ public class ConexionesBaseDeDatos {
         rs.close();
 
     }
-    
-        //14-09-17      busca en la base de datos y devuelve una lista de clientes
 
+    //14-09-17      busca en la base de datos y devuelve una lista de clientes
+    /**
+     * Crea una lista de clientes con los clientes obtenidos de la base de datos
+     * @return devuelve una lista de clientes
+     * @throws Exception
+     */
     public List<Cliente> buscarTodosLosClientes() throws Exception {
         List<Cliente> clientes = new ArrayList();
         Connection conexion = this.getConexionMysql();
@@ -82,7 +90,7 @@ public class ConexionesBaseDeDatos {
         return clientes;
     }
 
-       /* Clase 01-09-17 */
+    /* Clase 01-09-17 */
     public void insertarCliente(Cliente cliente) {
         Connection conexion = this.getConexionMysql();
 
@@ -117,8 +125,7 @@ public class ConexionesBaseDeDatos {
 
     }
 
-        /* Clase 06-09-17 */
-
+    /* Clase 06-09-17 */
     public Cliente buscarClientePorId(int id) {
         Cliente cliente = new Cliente();
         Connection conexion = this.getConexionMysql();
@@ -140,6 +147,7 @@ public class ConexionesBaseDeDatos {
 
         return cliente;
     }
+
     /* Clase 07-09-17 */
 
     public Cliente buscarClientePorCuit(String cuit) {
@@ -184,18 +192,17 @@ public class ConexionesBaseDeDatos {
 
         return mercaderia;
     }
-    
+
     /* Clase 01-09-17 */
     public void insertarMercaderia(Mercaderia mercaderia) {
-    Connection conexion = this.getConexionMysql(); //crear la conexion
+        Connection conexion = this.getConexionMysql(); //crear la conexion
 
-        String insert = "INSERT INTO mercaderias VALUES ("
-                + "\"" + mercaderia.getCodigo()+ "\","
-                + "\"" + mercaderia.getNombre()+ "\","
-                + mercaderia.getValor()+ ","
-                + mercaderia.getPeso()+ ")";
-                
-                
+        String insert = "INSERT INTO mercaderias VALUES (" //armamos el string que será la sentencia de sql
+                + "\"" + mercaderia.getCodigo() + "\","
+                + "\"" + mercaderia.getNombre() + "\","
+                + mercaderia.getValor() + ","
+                + mercaderia.getPeso() + ")";
+
         Statement st;
         try {
             st = conexion.createStatement();
@@ -206,7 +213,7 @@ public class ConexionesBaseDeDatos {
         }
     }
 
-        //07-09-17      busca en la base de datos y devuelve un objeto mercaderia
+    //07-09-17      busca en la base de datos y devuelve un lista de mercaderia
     public List<Mercaderia> buscarTodasLasMercaderias() {
         List<Mercaderia> mercaderias = new ArrayList();
         Connection conexion = this.getConexionMysql();
@@ -218,7 +225,7 @@ public class ConexionesBaseDeDatos {
                 Mercaderia mercaderia = new Mercaderia();
                 mercaderia.setCodigo(rs.getString("codigo"));
                 mercaderia.setNombre(rs.getString("nombre"));
-                mercaderia.setPeso(rs.getFloat("peso"));
+                mercaderia.setPeso(rs.getFloat("peso")); 
                 mercaderia.setValor(rs.getFloat("valor"));
 
                 mercaderias.add(mercaderia);
