@@ -34,54 +34,54 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        menuItemNuevoCliente = new javax.swing.JMenuItem();
-        itemVerMercaderias = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        menuItemNuevaMercaderia = new javax.swing.JMenuItem();
+        jMenuClientes = new javax.swing.JMenu();
+        jMenuItemVerClientes = new javax.swing.JMenuItem();
+        jMenuItemNuevoCliente = new javax.swing.JMenuItem();
+        jMenuMercaderias = new javax.swing.JMenu();
+        jMenuItemVerMercaderias = new javax.swing.JMenuItem();
+        jMenuItemNuevaMercaderia = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setText("Clientes");
+        jMenuClientes.setText("Clientes");
 
-        jMenuItem1.setText("Ver Todos");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItemVerClientes.setText("Ver Todos");
+        jMenuItemVerClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                jMenuItemVerClientesActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenuClientes.add(jMenuItemVerClientes);
 
-        menuItemNuevoCliente.setText("Nuevo Cliente");
-        menuItemNuevoCliente.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItemNuevoCliente.setText("Nuevo Cliente");
+        jMenuItemNuevoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemNuevoClienteActionPerformed(evt);
+                jMenuItemNuevoClienteActionPerformed(evt);
             }
         });
-        jMenu1.add(menuItemNuevoCliente);
+        jMenuClientes.add(jMenuItemNuevoCliente);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(jMenuClientes);
 
-        itemVerMercaderias.setText("Mercaderias");
+        jMenuMercaderias.setText("Mercaderias");
 
-        jMenuItem2.setText("Ver Mercaderias");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItemVerMercaderias.setText("Ver Mercaderias");
+        jMenuItemVerMercaderias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 itemVerMercaderiasActionPerformed(evt);
             }
         });
-        itemVerMercaderias.add(jMenuItem2);
+        jMenuMercaderias.add(jMenuItemVerMercaderias);
 
-        menuItemNuevaMercaderia.setText("Nueva Mercaderia");
-        menuItemNuevaMercaderia.addActionListener(new java.awt.event.ActionListener() {
+        jMenuItemNuevaMercaderia.setText("Nueva Mercaderia");
+        jMenuItemNuevaMercaderia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItemNuevaMercaderiaActionPerformed(evt);
+                jMenuItemNuevaMercaderiaActionPerformed(evt);
             }
         });
-        itemVerMercaderias.add(menuItemNuevaMercaderia);
+        jMenuMercaderias.add(jMenuItemNuevaMercaderia);
 
-        jMenuBar1.add(itemVerMercaderias);
+        jMenuBar1.add(jMenuMercaderias);
 
         setJMenuBar(jMenuBar1);
 
@@ -99,47 +99,47 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void jMenuItemVerClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemVerClientesActionPerformed
         System.out.println("Click en Ver todos los clientes");
-        ListadoClientes listadoClientes = new ListadoClientes();
-        listadoClientes.setBounds(10, 10, 600, 600);
-        listadoClientes.setVisible(true);
-
-        this.add(listadoClientes);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
+        if (this.listadoClientes == null) {
+            listadoClientes = new ListadoClientes();
+            listadoClientes.setBounds(10, 10, 600, 600);
+            listadoClientes.setVisible(true);
+            this.add(listadoClientes);
+    }//GEN-LAST:event_jMenuItemVerClientesActionPerformed
+    }
     private void itemVerMercaderiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemVerMercaderiasActionPerformed
 
-        this.listadoMercaderias = new ListadoMercaderias();
-        listadoMercaderias.setBounds(10, 10, 500, 500);
-        listadoMercaderias.setVisible(true);
-
-        this.add(listadoMercaderias);
-
+        if (this.listadoMercaderias == null) {
+            this.listadoMercaderias = new ListadoMercaderias();
+            listadoMercaderias.setBounds(10, 10, 500, 500);
+            listadoMercaderias.setVisible(true);
+            this.add(listadoMercaderias);
+        }
         try {
+            this.nuevaMercaderia.setClosed(true);
             this.nuevoCliente.setClosed(true);
+            
         } catch (PropertyVetoException ex) {
 
         }
     }//GEN-LAST:event_itemVerMercaderiasActionPerformed
 
-    private void menuItemNuevoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemNuevoClienteActionPerformed
+    private void jMenuItemNuevoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNuevoClienteActionPerformed
         if (this.nuevoCliente == null) {
             nuevoCliente = new NuevoCliente();
             nuevoCliente.setBounds(10, 10, 500, 500);
-            
-        }
-        nuevoCliente.setVisible(true);
-
-        this.add(nuevoCliente);
-    }//GEN-LAST:event_menuItemNuevoClienteActionPerformed
-
-    private void menuItemNuevaMercaderiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemNuevaMercaderiaActionPerformed
-        if (this.nuevoCliente == null) {
-            this.nuevoCliente = new NuevoCliente();
-            nuevoCliente.setBounds(10, 10, 400, 500);
-            this.add(nuevoCliente);
             nuevoCliente.setVisible(true);
+            this.add(nuevoCliente);
+    }//GEN-LAST:event_jMenuItemNuevoClienteActionPerformed
+    }
+
+    private void jMenuItemNuevaMercaderiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNuevaMercaderiaActionPerformed
+        if (this.nuevaMercaderia == null) {
+            this.nuevaMercaderia = new NuevaMercaderia();
+            nuevaMercaderia.setBounds(10, 10, 400, 500);
+            nuevaMercaderia.setVisible(true);
+            this.add(nuevaMercaderia);
         }
 
 //        NuevaMercaderia nuevaMercaderia = new NuevaMercaderia();
@@ -147,7 +147,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 //        this.add(nuevaMercaderia);
 //        nuevaMercaderia.setVisible(true);
 
-    }//GEN-LAST:event_menuItemNuevaMercaderiaActionPerformed
+    }//GEN-LAST:event_jMenuItemNuevaMercaderiaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,15 +185,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu itemVerMercaderias;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem menuItemNuevaMercaderia;
-    private javax.swing.JMenuItem menuItemNuevoCliente;
+    private javax.swing.JMenu jMenuClientes;
+    private javax.swing.JMenuItem jMenuItemNuevaMercaderia;
+    private javax.swing.JMenuItem jMenuItemNuevoCliente;
+    private javax.swing.JMenuItem jMenuItemVerClientes;
+    private javax.swing.JMenuItem jMenuItemVerMercaderias;
+    private javax.swing.JMenu jMenuMercaderias;
     // End of variables declaration//GEN-END:variables
 
     private NuevoCliente nuevoCliente;
+    private NuevaMercaderia nuevaMercaderia;
     private ListadoMercaderias listadoMercaderias;
+    private ListadoClientes listadoClientes;
 }
