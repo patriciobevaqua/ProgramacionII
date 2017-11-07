@@ -40,6 +40,7 @@ public class TrabajoPractico3 {
         //practico.ejercicio2();
     }
     public void ejercicio1() {
+        //se crea un cliente, cliente1, se le cargan datos
         Cliente cliente1 = new Cliente();
         cliente1.setNombre("Leonel Messi");
         cliente1.setCuit("20-30059658-5");
@@ -52,7 +53,7 @@ public class TrabajoPractico3 {
     }
     
     /**
-     * Pedido
+     * 1 Pedido
      * 1 Cliente
      * 2 Detalles de PEdidos
      * * 1 Mercaderia

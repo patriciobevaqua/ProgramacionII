@@ -9,7 +9,7 @@ package excepciones;
  *
  * @author Estudio
  */
-public class ExcepcionBevaqua extends Exception {  //creada para el ejercicio 6
+public class ExcepcionBevaqua extends Exception {  //creada para el ejercicio 6 del tp2
 
     public ExcepcionBevaqua(String mensaje) {
         super(mensaje);
