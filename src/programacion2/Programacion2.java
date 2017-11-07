@@ -27,7 +27,21 @@ public class Programacion2 {
         // cómo verificar la conexión a la base de datos:
         ConexionesBaseDeDatos c = new ConexionesBaseDeDatos();
         c.getConexionMysql();
-
+        
+        //03-11-2017 crear un pedido, utilizar el metodo ejercicio2() que trae un pedido
+        TrabajoPractico3 practico3= new TrabajoPractico3();
+        
+        DetallePedido detalle8=new DetallePedido();
+        detalle8.setMercaderia(mercaderia);
+        detalle8.setCantidad(10);
+        Pedido pedido1=practico3.ejercicio2(); //ver qué hace acá
+        pedido1.getDetalles().add(detalle8);
+        //obtener el nombre de la mercaderia del detalle 2
+        System.out.println("nombre de la mercaderia del detalle 2: "
+                +pedido1.getDetalles().get(2).getMercaderia().getNombre());
+        
+        
+        
     }
 
 }
