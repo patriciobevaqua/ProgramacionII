@@ -39,6 +39,12 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
         jButtonGuardar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
 
+        textFieldNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldNombreActionPerformed(evt);
+            }
+        });
+
         jLabelNombre.setText("Nombre");
         jLabelNombre.setToolTipText("Nombre");
 
@@ -128,6 +134,10 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
         this.setVisible(false);
         
     }//GEN-LAST:event_jButtonGuardarActionPerformed
+
+    private void textFieldNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldNombreActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

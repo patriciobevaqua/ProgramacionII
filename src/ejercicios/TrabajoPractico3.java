@@ -1,4 +1,4 @@
-package ejercicios;
+ package ejercicios;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -55,47 +55,47 @@ public class TrabajoPractico3 {
     /**
      * 1 Pedido
      * 1 Cliente
-     * 2 Detalles de PEdidos
+     * 2 Detalles de Pedidos y cada uno:
      * * 1 Mercaderia
      * * Cantidad
      * @return Pedido
      */
-    public Pedido ejercicio2() {
-        Cliente cliente = new Cliente();
+    public Pedido ejercicio2() {  
+        Cliente cliente = new Cliente(); //Creo cliente
         cliente.setNombre("Jorge Gomez");
         cliente.setEmail("jorge@gmail.com");
         cliente.setCuit("20-30059658-5");
         
-        Mercaderia mercaderia1 = new Mercaderia();
+        Mercaderia mercaderia1 = new Mercaderia(); //Creo una mercadería
         mercaderia1.setCodigo("COD001");
         mercaderia1.setNombre("Yerba");
         mercaderia1.setValor(30);
         mercaderia1.setPeso(0.5f);
         
-        Mercaderia mercaderia2 = new Mercaderia();
+        Mercaderia mercaderia2 = new Mercaderia();  //Creo otra mercaderia
         mercaderia2.setCodigo("COD002");
         mercaderia2.setNombre("Fernet");
         mercaderia2.setValor(150);
         mercaderia2.setPeso(1);
         
-        DetallePedido detalle1 = new DetallePedido();
-        detalle1.setMercaderia(mercaderia1);
-        detalle1.setCantidad(4);
+        DetallePedido detalle1 = new DetallePedido(); // creo un detalle de peio
+        detalle1.setMercaderia(mercaderia1);  //guardo la mercderia 
+        detalle1.setCantidad(4);  // indico cantidad de esa mercadria
         
-        DetallePedido detalle2 = new DetallePedido();
+        DetallePedido detalle2 = new DetallePedido(); //Creo otro detalle e pedido
         detalle2.setMercaderia(mercaderia2);
         detalle2.setCantidad(6);
         
-        List<DetallePedido> listaDetalles = new ArrayList();
-        listaDetalles.add(detalle1);
-        listaDetalles.add(detalle2);
+        List<DetallePedido> listaDetalles = new ArrayList();  //creo una lista de detalle de pedido que va a incorporarse al pedido
+        listaDetalles.add(detalle1);  //agrego a la lista el detalle de pedido
+        listaDetalles.add(detalle2); //agrego a la lista el detalle de pedido
         
-        DetallePedido detalle = listaDetalles.get(1);
+        DetallePedido detalle = listaDetalles.get(1);  //creo un detalle y le asigno los datos de un elemento de la lista de detalles (en la posicion 1)
         
-        // Ejemplo de lista sin tipo
+        // Ejemplo de lista sin tipo  (sin tipo de dato)
         List listaDetalles2 = new ArrayList();
         listaDetalles2.add(detalle1);
-        listaDetalles2.add("Cualquier cosa");        
+        listaDetalles2.add("Cualquier cosa"); //se puede adicionar cualquier cosa porque no tiene tipo de dato la lista
         DetallePedido detalleEnLista = (DetallePedido) listaDetalles2.get(0);
         
         
@@ -103,6 +103,7 @@ public class TrabajoPractico3 {
         pedido1.setCliente(cliente);
         pedido1.setFecha(new Date());
         pedido1.setDetalles(listaDetalles);
+        
         
         return pedido1;
         
@@ -113,7 +114,7 @@ public class TrabajoPractico3 {
      * y agregar un nuevo detalle que incluya una mercaderia nueva
      */
     public void ejercicio3() {
-        Pedido pedidoEjercicio2= this.ejercicio2();
+        Pedido pedidoEjercicio2= this.ejercicio2(); //este es el metodo ejercicio2() que devuelve un pedido
         Mercaderia mercaderiaNueva= new Mercaderia();
         mercaderiaNueva.setCodigo("C004");
         mercaderiaNueva.setNombre("Azucar");
@@ -126,13 +127,11 @@ public class TrabajoPractico3 {
         pedidoEjercicio2.getDetalles().add(pedido3);
              
         System.out.println(""+ pedidoEjercicio2.getDetalles().get(2).getCantidad());
-        
-        
         System.out.println(""+ pedidoEjercicio2.getDetalles().get(2).getMercaderia().getNombre());
         
-        pedidoEjercicio2.getDetalles().get(0).setCantidad(17);
-        
         //cambiar la cantidad del pedido uno
+        pedidoEjercicio2.getDetalles().get(0).setCantidad(17);
+                
         System.out.println("Nueva Cantidad: "+ pedidoEjercicio2.getDetalles().get(0).getCantidad());
         
         
