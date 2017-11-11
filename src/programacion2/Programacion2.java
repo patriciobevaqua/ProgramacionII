@@ -42,6 +42,12 @@ public class Programacion2 {
         
         
         
+    //        TrabajoPractico1 ejercicio1= new TrabajoPractico1();
+        //ejercicio1.ejercicio3();
+        TrabajoPractico3 ejercicio4=new TrabajoPractico3();
+        ejercicio4.ejercicio4(2);
+
+    
     }
 
 }

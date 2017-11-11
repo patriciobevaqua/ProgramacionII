@@ -130,7 +130,7 @@ public class TrabajoPractico1 {
      */
     public void ejercicio4() {
         System.out.println("\nEjercicio 4");
-        List<Integer> listaEnteros = new ArrayList();
+        List<Integer> listaEnteros = new ArrayList();  //es dinamico ppal diferencia
         listaEnteros.add(1);
         listaEnteros.add(2);
         listaEnteros.add(3);

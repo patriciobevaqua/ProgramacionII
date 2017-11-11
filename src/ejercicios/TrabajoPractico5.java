@@ -17,6 +17,14 @@ import javax.swing.JPanel;
  */
 public class TrabajoPractico5 {
     
+    public static void main(String[] args) {
+        TrabajoPractico5 ej1= new TrabajoPractico5();
+        
+        ej1.ejercicio1();   //frame
+        ej1.ejercicio2();   // internal frame
+        ej1.ejercicio3();   // internal frame
+    }
+    
     public void ejercicio1() {
         JFrame frame = new JFrame();
         frame.setLayout(null);

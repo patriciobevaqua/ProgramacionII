@@ -19,45 +19,46 @@ public class TrabajoPractico4 {
 
     }
 
-    /**
+    /** LISTAS
      * Ejemplos de listas y objetos.
      */
     public void ejercicio1() {
-        DetallePedido detalle1 = new DetallePedido();
-        detalle1.setCantidad(7);
-        DetallePedido detalle2 = new DetallePedido();
-        detalle2.setCantidad(8);
-        DetallePedido detalle3 = new DetallePedido();
-        detalle3.setCantidad(9);
+        DetallePedido detalle1 = new DetallePedido(); //crea un detalle de peido
+        detalle1.setCantidad(7); // indica cantidad de ese detalle de pedido
+        DetallePedido detalle2 = new DetallePedido(); //crea un detalle de peido
+        detalle2.setCantidad(8); // indica cantidad de ese detalle de pedido
+        DetallePedido detalle3 = new DetallePedido(); //crea un detalle de peido
+        detalle3.setCantidad(9); // indica cantidad de ese detalle de pedido
 
-        List<DetallePedido> detalles = new ArrayList();
-        detalles.add(detalle1);
+        List<DetallePedido> detalles = new ArrayList(); //creo la lista de detalles de pedido
+        detalles.add(detalle1); // guarda en la lista
         detalles.add(detalle2);
         detalles.add(detalle3);
 
-        for (int i = 0; i < detalles.size(); i++) {
+        for (int i = 0; i < detalles.size(); i++) { // recorre la lista con un for i para imprimir la cantidad
             DetallePedido detalle = detalles.get(i);
             System.out.println(detalle.getCantidad());
         }
 
-        for (DetallePedido detalle : detalles) {
+        for (DetallePedido detalle : detalles) {  // recorre la list con un for e para imprimir la cantidad
             System.out.println(detalle.getCantidad());
         }
 
-        Iterator<DetallePedido> iterator = detalles.listIterator();
-        while (iterator.hasNext()) {
-            DetallePedido detalle = iterator.next();
+        Iterator<DetallePedido> iterador = detalles.listIterator();
+        while (iterador.hasNext()) {
+            DetallePedido detalle = iterador.next();
             System.out.println(detalle.getCantidad());
         }
     }
 
     /**
-     * 1. Crear n clientes y agregarlos a una lista. 2. Recorrer la lista y
-     * mostrar un mensaje para cada cliente de la forma: Cliente Numero: {id}
-     * Nombre: Nombre_{id} Email: email_{id}@gmail.com
+     * 1. Crear n clientes y agregarlos a una lista. 
+     * 2. Recorrer la lista y
+     * mostrar un mensaje para cada cliente de la forma: 
+     * Cliente Numero: {id} Nombre: Nombre_{id} Email: email_{id}@gmail.com
      *
      * @param cantidadClientes
-     * @return
+     * @return Lista de clientes
      */
     public List<Cliente> ejercicio2(int cantidadClientes) {
         List<Cliente> clientes = new ArrayList();
@@ -94,7 +95,7 @@ public class TrabajoPractico4 {
             Cliente cliente = new Cliente();
             cliente.setId(i);
             cliente.setNombre("nombre_" + i);
-            cliente.setEmail("email_" + i + "gmail.com");
+            cliente.setEmail("email_" + i + "@gmail.com");
 
             clientes.add(cliente);
 

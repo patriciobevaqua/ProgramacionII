@@ -18,25 +18,28 @@ public class TrabajoPractico3 {
 
         Pedido pedido;
 
-        pedido = practico.ejercicio2();
+        pedido = practico.ejercicio2();   //ese método devuelve un pedido
         practico.ejercicio3();
+        
 
-        System.out.println("Nombre Cliente");
-        System.out.println(pedido.getCliente().getNombre());
+        System.out.println("Nombre Cliente");  //Nombre Cliente
+        System.out.println(pedido.getCliente().getNombre()); //Jorge Gomez
 
-        System.out.println("Mercaderia 2");
-        System.out.println(pedido.getDetalles().get(1).getMercaderia().getNombre());
+        System.out.println("Mercaderia 2");  //Mercaderia 2
+        System.out.println(pedido.getDetalles().get(1).getMercaderia().getNombre()); //Fernet
 
-        List<DetallePedido> listaDetalles = pedido.getDetalles();
-        DetallePedido detallePedido2 = listaDetalles.get(1);
-        Mercaderia mercaderia = detallePedido2.getMercaderia();
+        List<DetallePedido> listaDetalles = pedido.getDetalles();  //creo una lista de detalles de pedido a la que asigno la lista de detalle 
+        DetallePedido detallePedido2 = listaDetalles.get(1); //creo un detalle de pedido al que le asigno un elemento de la lista de detalle
+        Mercaderia mercaderia = detallePedido2.getMercaderia(); //creo un mercadería a la que le asigno la mercaderia del detalle de pedido
 
-        System.out.println("Mercaderia 2 - Ordenada");
-        System.out.println(mercaderia.getNombre());
+        System.out.println("Mercaderia 2 - Ordenada"); //Mercaderia 2 - Ordenada
+        System.out.println(mercaderia.getNombre());  //Fernet
 
-        System.out.println("Cantidad de Botellas");
-        System.out.println(pedido.getDetalles().get(1).getCantidad());
-
+        System.out.println("Cantidad de Botellas"); //Cantidad de Botellas
+        System.out.println(pedido.getDetalles().get(1).getCantidad()); // 6
+        System.out.println(detallePedido2.getCantidad());  // 6
+        
+        
         //practico.ejercicio2();
     }
     public void ejercicio1() {
@@ -87,8 +90,8 @@ public class TrabajoPractico3 {
         detalle2.setCantidad(6);
         
         List<DetallePedido> listaDetalles = new ArrayList();  //creo una lista de detalle de pedido que va a incorporarse al pedido
-        listaDetalles.add(detalle1);  //agrego a la lista el detalle de pedido
-        listaDetalles.add(detalle2); //agrego a la lista el detalle de pedido
+        listaDetalles.add(detalle1);  //agrego a la lista de detalle de detalle de pedido el detalle de pedido
+        listaDetalles.add(detalle2);  //agrego a la lista de detalle de pedido el detalle de pedido
         
         DetallePedido detalle = listaDetalles.get(1);  //creo un detalle y le asigno los datos de un elemento de la lista de detalles (en la posicion 1)
         
@@ -99,10 +102,10 @@ public class TrabajoPractico3 {
         DetallePedido detalleEnLista = (DetallePedido) listaDetalles2.get(0);
         
         
-        Pedido pedido1 = new Pedido();
-        pedido1.setCliente(cliente);
-        pedido1.setFecha(new Date());
-        pedido1.setDetalles(listaDetalles);
+        Pedido pedido1 = new Pedido(); // Creo un pedido 
+        pedido1.setCliente(cliente); //le asigno el cliente
+        pedido1.setFecha(new Date()); //
+        pedido1.setDetalles(listaDetalles); //le asigno la lista de detalle de pedidos
         
         
         return pedido1;
@@ -113,9 +116,9 @@ public class TrabajoPractico3 {
      * LLamar al metodo del ejercicio 2 para crear un pedido completo
      * y agregar un nuevo detalle que incluya una mercaderia nueva
      */
-    public void ejercicio3() {
+    public Pedido ejercicio3() {
         Pedido pedidoEjercicio2= this.ejercicio2(); //este es el metodo ejercicio2() que devuelve un pedido
-        Mercaderia mercaderiaNueva= new Mercaderia();
+        Mercaderia mercaderiaNueva= new Mercaderia(); //crea una mercaderia
         mercaderiaNueva.setCodigo("C004");
         mercaderiaNueva.setNombre("Azucar");
         
@@ -124,19 +127,33 @@ public class TrabajoPractico3 {
         pedido3.setMercaderia(mercaderiaNueva);
         pedido3.setCantidad(3);
         
-        pedidoEjercicio2.getDetalles().add(pedido3);
-             
-        System.out.println(""+ pedidoEjercicio2.getDetalles().get(2).getCantidad());
-        System.out.println(""+ pedidoEjercicio2.getDetalles().get(2).getMercaderia().getNombre());
+        pedidoEjercicio2.getDetalles().add(pedido3); //adiciona a la lista de detalles de detalles (del pedido) un detalle de pedido 
+        
+
+//imprime datos:     
+        System.out.println(""+ pedidoEjercicio2.getDetalles().get(2).getCantidad());  // 3
+        System.out.println(""+ pedidoEjercicio2.getDetalles().get(2).getMercaderia().getNombre()); //azucar
         
         //cambiar la cantidad del pedido uno
         pedidoEjercicio2.getDetalles().get(0).setCantidad(17);
-                
-        System.out.println("Nueva Cantidad: "+ pedidoEjercicio2.getDetalles().get(0).getCantidad());
         
+        //imprime datos: 
+        System.out.println("Nueva Cantidad: "+ pedidoEjercicio2.getDetalles().get(0).getCantidad()); // Nueva Cantidad: 17
+        
+        return pedidoEjercicio2;
         
     }
 
+public void ejercicio4(int numero){ //instancia o clase
+    Pedido pedidoEjercicio4= null;
+            //new Pedido();
+    //TrabajoPractico3 TP3=
+    pedidoEjercicio4= this.ejercicio3() ; 
+    pedidoEjercicio4.getDetalles().get(numero).getMercaderia().getNombre();
+    // imprimir el nombre del detalle del parametro la mercadeeria quee esta en el parametro
     
+    
+    
+}    
     
 }
