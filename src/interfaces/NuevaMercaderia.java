@@ -41,6 +41,8 @@ public class NuevaMercaderia extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
+        setTitle("Neva Mercaderia");
+
         jLabel1.setText("Codigo");
 
         textFieldCodigo.setToolTipText("Codigo");

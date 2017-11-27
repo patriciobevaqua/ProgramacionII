@@ -39,6 +39,8 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
         jButtonGuardar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
 
+        setTitle("Nuevo Cliente");
+
         textFieldNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textFieldNombreActionPerformed(evt);
