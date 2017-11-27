@@ -5,6 +5,9 @@
  */
 package interfaces;
 
+import modelos.Mercaderia;
+import servicios.ConexionesBaseDeDatos;
+
 /**
  *
  * @author arielp
@@ -127,6 +130,21 @@ public class NuevaMercaderia extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+         System.out.println("Click en Guardar");
+        
+        Mercaderia mercad = new Mercaderia();
+        mercad.setCodigo(this.textFieldCodigo.getText());
+        mercad.setNombre(this.textFieldNombre.getText()); //lo que está entre parentesis toma el dato del textField
+        mercad.setPeso(Float.parseFloat(this.textFieldPeso.getText()));
+        mercad.setValor(Float.parseFloat(this.textFieldValor.getText()));
+        
+        ConexionesBaseDeDatos conexion = new ConexionesBaseDeDatos();
+        conexion.insertarMercaderia(mercad);
+        
+        this.textFieldNombre.setText("");
+        
+        this.setVisible(false);
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void textFieldCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldCodigoActionPerformed
