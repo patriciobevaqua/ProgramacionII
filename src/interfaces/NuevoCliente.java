@@ -125,6 +125,7 @@ public class NuevoCliente extends javax.swing.JInternalFrame {
         cliente.setNombre(this.textFieldNombre.getText()); //lo que está entre parentesis toma el dato del textField
         cliente.setEmail(this.textFieldEmail.getText());
         cliente.setCuit(this.textFieldCuit.getText());
+        //Nota: no estamos cargando el id que sí está en el método insertarCliente y este está enviando un valor 0 o null, pero está autoincremental en la BD Y NO afecta
         
         ConexionesBaseDeDatos conexion = new ConexionesBaseDeDatos();
         conexion.insertarCliente(cliente);

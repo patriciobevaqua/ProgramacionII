@@ -97,7 +97,7 @@ public class ConexionesBaseDeDatos {
         Connection conexion = this.getConexionMysql();
 
         String query = "INSERT INTO clientes VALUES("  //es un String que tiene el formato para hacer el INSERT en la BD
-                + "\"" + cliente.getId() + "\", "
+                + "\"" + cliente.getId() + "\", "    
                 + "\"" + cliente.getNombre() + "\", "
                 + "\"" + cliente.getEmail() + "\", "
                 + "\"" + cliente.getCuit() + "\", "
