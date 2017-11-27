@@ -34,7 +34,7 @@ public class TrabajoPractico2 {
         System.out.println("Título EJERCICIO 1 ");
 
         int[] array = new int[20];
-        //array[-7] = 24;
+        //array[-7] = 24;     //indice del elemento fuera del limite del array
     }
 
     public void ejercicio2() {
@@ -42,9 +42,9 @@ public class TrabajoPractico2 {
 
         try { // Instrucciones cuando no hay una excepción
             int[] array = new int[20];
-            array[50] = 24;  
+            array[50] = 24;  //indice del elemento fuera del limite del array
 
-        } catch (ArrayIndexOutOfBoundsException ex) {
+        } catch (ArrayIndexOutOfBoundsException ex) {  //se pone el tipo de excepción y un objeto que va a cotener loss datoss del objeto
             // Instrucciones cuando se produce una excepcion
             System.out.println("Excepcion: " + ex);
         } finally {

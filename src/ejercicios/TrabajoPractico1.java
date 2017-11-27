@@ -1,6 +1,7 @@
 package ejercicios;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -21,8 +22,8 @@ public class TrabajoPractico1 {
     }
 
     /**
-     * Crea un arreglo de string
-     * luego se reccorre de dos formas, for i (fori) y for each (fore)
+     * Crea un arreglo de string luego se reccorre de dos formas, for i (fori) y
+     * for each (fore)
      */
     public void ejercicio1() {
         System.out.println("Ejercicio 1");
@@ -38,22 +39,23 @@ public class TrabajoPractico1 {
             System.out.println(palabra);
         }
         //System.out.println("\n");
-        
+
         System.out.println("\nIterando Arreglos forma 2 (con un for each)");
-        /**en el for each
-         * se crea una variable del tipo que contiene el arreglo, en este caso String
-         * la variable palabra cumple a funcion de palabra[i]
-         * luego de los dos puntos (:) va el nombre del arreglo
-        */
-        for (String palabra : palabras) { 
+        /**
+         * en el for each se crea una variable del tipo que contiene el arreglo,
+         * en este caso String la variable palabra cumple a funcion de
+         * palabra[i] luego de los dos puntos (:) va el nombre del arreglo
+         */
+        for (String palabra : palabras) {
             System.out.println(palabra);
         }
-    
+
     }
-      /**
-       * crea una lista. la lista (a diferencia de un arreglo) contiene objetos
-       * para adicionar datos se utiliza add, para determinar el tamaño size
-       */
+
+    /**
+     * crea una lista. la lista (a diferencia de un arreglo) contiene objetos
+     * para adicionar datos se utiliza add, para determinar el tamaño size
+     */
     public void ejercicio2() {
         System.out.println("\nEjercicio 2");
         List<String> palabras = new ArrayList();
@@ -61,7 +63,6 @@ public class TrabajoPractico1 {
         palabras.add("es");
         palabras.add("una");
         palabras.add("frase");
-        
 
         System.out.println("Iterando Listas forma 1 (for i)");
         for (int i = 0; i < palabras.size(); i++) {
@@ -74,11 +75,11 @@ public class TrabajoPractico1 {
         for (String palabra : palabras) {
             System.out.println(palabra);
         }
-            /**
-             * usa el metodo iterator() de la lista
-             * luego asigna ese dato a una variable iterador (string)
-             * y esa variable iterador utiliza los metodos hasNext() y next()
-             */
+        /**
+         * usa el metodo iterator() de la lista luego asigna ese dato a una
+         * variable iterador (string) y esa variable iterador utiliza los
+         * metodos hasNext() y next()
+         */
         System.out.println("Iterando Listas forma 3 (Iterador)");
         Iterator<String> iterador = palabras.iterator();
         while (iterador.hasNext()) {
@@ -106,18 +107,19 @@ public class TrabajoPractico1 {
         for (int numeroi : enteros) {
             System.out.println(numeroi);
         }
-        
-        
+
         System.out.println("-------------------------\n");
 
         //hago una lista de enteros. 
         List<Integer> listaEnteros = new ArrayList();
+        //ArrayList<Integer> numerotes =new ArrayList();
+        //ArrayList numerasos =new ArrayList();
         listaEnteros.add(11);
         listaEnteros.add(12);
         listaEnteros.add(13);
         listaEnteros.add(14);
         System.out.println("Iterando Lista de enteros forma 3 (Iterador)");
-        
+
         Iterator<Integer> iteradorNumero = listaEnteros.iterator();
         while (iteradorNumero.hasNext()) {
             System.out.println(iteradorNumero.next());
@@ -156,6 +158,23 @@ public class TrabajoPractico1 {
             System.out.println(iterador.next());
         }
         System.out.println("\n");
+
+    }
+
+    public void ejercicio5() {
+        // Iterator  cuando es un arreglo de objetos
+
+        Object[] arreglo = new Object[10];
+        Iterator i = Arrays.asList(arreglo).iterator();
+        while (i.hasNext()) {
+        }
+        // Iterator  cuando es una lista
+
+        List lista = new ArrayList();
+        Iterator ii = lista.iterator();
+        while (ii.hasNext()) {
+
+        }
 
     }
 }
