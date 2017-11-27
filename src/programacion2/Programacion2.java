@@ -28,20 +28,20 @@ public class Programacion2 {
         ConexionesBaseDeDatos c = new ConexionesBaseDeDatos();
         c.getConexionMysql();
         
-        //03-11-2017 crear un pedido, utilizar el metodo ejercicio2() que trae un pedido
+        //03-11-2017 crear un pedido, utilizar el metodo ejercicio2() que trae un pedido (*1)
         TrabajoPractico3 practico3= new TrabajoPractico3();
         
         DetallePedido detalle8=new DetallePedido();
         detalle8.setMercaderia(mercaderia);
         detalle8.setCantidad(10);
-        Pedido pedido1=practico3.ejercicio2(); //ver qué hace acá
+        Pedido pedido1=practico3.ejercicio2(); //ver qué hace acá -> acá cumple la consigna (*1), trae el pedido que entrega el método ejercicio2() y lo asigna a un pedido creado
         pedido1.getDetalles().add(detalle8);
         //obtener el nombre de la mercaderia del detalle 2
         System.out.println("nombre de la mercaderia del detalle 2: "
                 +pedido1.getDetalles().get(2).getMercaderia().getNombre());
         
         
-        
+        //segundo parcial 2017
     //        TrabajoPractico1 ejercicio1= new TrabajoPractico1();
         //ejercicio1.ejercicio3();
         TrabajoPractico3 ejercicio4=new TrabajoPractico3();

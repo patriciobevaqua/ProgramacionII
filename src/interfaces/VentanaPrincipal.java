@@ -103,7 +103,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         System.out.println("Click en Ver todos los clientes");
         if (this.listadoClientes == null) {
             listadoClientes = new ListadoClientes();
-            listadoClientes.setBounds(10, 10, 600, 600);
+            listadoClientes.setBounds(10, 10, 500, 500);
             listadoClientes.setVisible(true);
             this.add(listadoClientes);
     }//GEN-LAST:event_jMenuItemVerClientesActionPerformed

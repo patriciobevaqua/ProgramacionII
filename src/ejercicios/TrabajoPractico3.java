@@ -144,13 +144,13 @@ public class TrabajoPractico3 {
         
     }
 
-public void ejercicio4(int numero){ //instancia o clase
+public void ejercicio4(int numero){ //este método es de instancia o clase  -> s de instancia!!! para ser de clase debería ser static
     Pedido pedidoEjercicio4= null;
             //new Pedido();
     //TrabajoPractico3 TP3=
     pedidoEjercicio4= this.ejercicio3() ; 
     pedidoEjercicio4.getDetalles().get(numero).getMercaderia().getNombre();
-    // imprimir el nombre del detalle del parametro la mercadeeria quee esta en el parametro
+    // imprimir el nombre de la mercadería del detalle indicado en el parametro 
     
     
     

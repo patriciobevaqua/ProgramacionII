@@ -56,9 +56,9 @@ public class ConexionesBaseDeDatos {
 
         ResultSet rs = statement.executeQuery("select * from clientes"); //executeQuery: LEER (EJECUTAR CONSULTA)
         while (rs.next()) {
-            System.out.println("id: " + rs.getObject("id"));
-            System.out.println("nombre: " + rs.getObject("nombre"));
-            System.out.println("cuit: " + rs.getObject("cuit"));
+            System.out.println("id: " + rs.getObject("id"));   //rs.getObject(1)
+            System.out.println("nombre: " + rs.getObject("nombre")); //rs.getObject(2)
+            System.out.println("cuit: " + rs.getObject("cuit"));   //rs.getObject(3)
         }
         rs.close();
 
@@ -72,31 +72,31 @@ public class ConexionesBaseDeDatos {
      * @throws Exception
      */
     public List<Cliente> buscarTodosLosClientes() throws Exception {
-        List<Cliente> clientes = new ArrayList();
+        List<Cliente> listaClientes = new ArrayList();
         Connection conexion = this.getConexionMysql();
-        Statement statement = conexion.createStatement();
+        Statement st = conexion.createStatement();
 
-        ResultSet rs = statement.executeQuery("select * from clientes"); //executeQuery: LEER (EJECUTAR CONSULTA)
+        ResultSet rs = st.executeQuery("select * from clientes"); //executeQuery: LEER (EJECUTAR CONSULTA)
 
-        while (rs.next()) {   //ResultSet rs guarda los datos de la selección
+        while (rs.next()) {   //ResultSet rs guarda los datos de la selección (es como una lista)
             Cliente cliente = new Cliente();
             cliente.setId((int) rs.getLong("id")); //hay dos maneras de buscarlo casteando o utilizando el getTipodeDato
             cliente.setNombre(rs.getString("nombre"));
             cliente.setCuit(rs.getString("cuit"));
             cliente.setEmail(rs.getString("email"));
 
-            clientes.add(cliente);
+            listaClientes.add(cliente);
         }
         rs.close();
 
-        return clientes;
+        return listaClientes;
     }
 
     /* Clase 01-09-17 */
     public void insertarCliente(Cliente cliente) {
         Connection conexion = this.getConexionMysql();
 
-        String query = "INSERT INTO clientes VALUES("
+        String query = "INSERT INTO clientes VALUES("  //es un String que tiene el formato para hacer el INSERT en la BD
                 + "\"" + cliente.getId() + "\", "
                 + "\"" + cliente.getNombre() + "\", "
                 + "\"" + cliente.getEmail() + "\", "
@@ -184,7 +184,7 @@ public class ConexionesBaseDeDatos {
                 mercaderia.setCodigo(rs.getString("codigo"));  //hay dos maneras de buscarlo casteando o utilizando el getTipodeDato
                 mercaderia.setNombre(rs.getString("nombre"));
                 mercaderia.setPeso((float) rs.getLong("peso"));
-                mercaderia.setValor((float) rs.getLong("valor"));
+                mercaderia.setValor((float) rs.getLong("precio"));
             }
             rs.close();
         } catch (SQLException ex) {
@@ -227,7 +227,7 @@ public class ConexionesBaseDeDatos {
                 mercaderia.setCodigo(rs.getString("codigo"));
                 mercaderia.setNombre(rs.getString("nombre"));
                 mercaderia.setPeso(rs.getFloat("peso"));
-                mercaderia.setValor(rs.getFloat("valor"));
+                mercaderia.setValor(rs.getFloat("precio"));
 
                 mercaderias.add(mercaderia);
             }

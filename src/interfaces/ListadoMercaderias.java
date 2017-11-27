@@ -5,7 +5,12 @@
  */
 package interfaces;
 
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
+import modelos.Mercaderia;
+import servicios.ConexionesBaseDeDatos;
 
 /**
  *
@@ -23,8 +28,25 @@ public class ListadoMercaderias extends javax.swing.JInternalFrame {
     }
     
     private void cargarMercaderias() {
-        DefaultTableModel model = (DefaultTableModel) this.tablaClientes.getModel();
-        model.addRow(new Object[]{"Column 1", "Column 2", "Column 3", "Column 3"});
+        DefaultTableModel model = (DefaultTableModel) this.tablaMercaderias.getModel();
+        ConexionesBaseDeDatos conexiones = new ConexionesBaseDeDatos();
+
+        //model.addRow(new Object[]{"Column 1", "Column 2", "Column 3", "Column 4"});
+        try {
+            List<Mercaderia> mercaderias = conexiones.buscarTodasLasMercaderias();
+            for (Mercaderia mercad : mercaderias) {
+                Object[] fila = new Object[4];
+                fila[0] = mercad.getCodigo();
+                fila[1] = mercad.getNombre();
+                fila[2] = mercad.getPeso();
+                fila[3] = mercad.getValor();
+                //fila[4] = mercad.getTipo();
+
+                model.addRow(fila); //agrega el objeto a la tabla
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(ListadoMercaderias.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -37,7 +59,7 @@ public class ListadoMercaderias extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        tablaClientes = new javax.swing.JTable();
+        tablaMercaderias = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -45,7 +67,7 @@ public class ListadoMercaderias extends javax.swing.JInternalFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         setTitle("Mercaderias");
 
-        tablaClientes.setModel(new javax.swing.table.DefaultTableModel(
+        tablaMercaderias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -54,14 +76,14 @@ public class ListadoMercaderias extends javax.swing.JInternalFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.Float.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tablaClientes);
+        jScrollPane1.setViewportView(tablaMercaderias);
 
         jButton1.setText("Crear");
 
@@ -73,18 +95,15 @@ public class ListadoMercaderias extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(58, 58, 58)
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
                 .addGap(39, 39, 39)
                 .addComponent(jButton3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,8 +113,8 @@ public class ListadoMercaderias extends javax.swing.JInternalFrame {
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -108,6 +127,6 @@ public class ListadoMercaderias extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tablaClientes;
+    private javax.swing.JTable tablaMercaderias;
     // End of variables declaration//GEN-END:variables
 }
