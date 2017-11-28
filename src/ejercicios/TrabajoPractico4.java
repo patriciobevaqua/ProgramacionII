@@ -47,7 +47,8 @@ public class TrabajoPractico4 {
         Iterator<DetallePedido> iterador = detalles.listIterator();
         while (iterador.hasNext()) {
             DetallePedido detalle = iterador.next();
-            System.out.println(detalle.getCantidad());
+            System.out.println(detalle.getCantidad());   // o   System.out.println(iterador.next());
+            
         }
     }
 

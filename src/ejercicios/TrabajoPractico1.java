@@ -173,6 +173,7 @@ public class TrabajoPractico1 {
         List lista = new ArrayList();
         Iterator ii = lista.iterator();
         while (ii.hasNext()) {
+            System.out.println(ii.next());
 
         }
 
