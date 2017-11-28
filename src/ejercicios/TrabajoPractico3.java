@@ -93,7 +93,15 @@ public class TrabajoPractico3 {
         listaDetalles.add(detalle1);  //agrego a la lista de detalle de detalle de pedido el detalle de pedido
         listaDetalles.add(detalle2);  //agrego a la lista de detalle de pedido el detalle de pedido
         
-        DetallePedido detalle = listaDetalles.get(1);  //creo un detalle y le asigno los datos de un elemento de la lista de detalles (en la posicion 1)
+            
+        
+        Pedido pedido1 = new Pedido(); // Creo un pedido 
+        pedido1.setCliente(cliente); //le asigno el cliente
+        pedido1.setFecha(new Date()); //
+        pedido1.setDetalles(listaDetalles); //le asigno la lista de detalle de pedidos
+        
+       
+         DetallePedido detalle = listaDetalles.get(1);  //creo un detalle y le asigno los datos de un elemento de la lista de detalles (en la posicion 1)
         
         // Ejemplo de lista sin tipo  (sin tipo de dato)
         List listaDetalles2 = new ArrayList();
@@ -101,11 +109,6 @@ public class TrabajoPractico3 {
         listaDetalles2.add("Cualquier cosa"); //se puede adicionar cualquier cosa porque no tiene tipo de dato la lista
         DetallePedido detalleEnLista = (DetallePedido) listaDetalles2.get(0);
         
-        
-        Pedido pedido1 = new Pedido(); // Creo un pedido 
-        pedido1.setCliente(cliente); //le asigno el cliente
-        pedido1.setFecha(new Date()); //
-        pedido1.setDetalles(listaDetalles); //le asigno la lista de detalle de pedidos
         
         
         return pedido1;

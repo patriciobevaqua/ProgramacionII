@@ -23,9 +23,9 @@ public class TrabajoPractico2 {
         }
         practico2.ejercicio5();
 
-        practico2.ejercicio6();
+        practico2.ejercicio6();     //este método puede tirar una excepcion no tratada por eso obliga a informarlo en la firma del metodo a traves del throws
         
-        double resultado=  practico2.dividir(2, 2);
+        double resultado=  practico2.dividir(2, 2); //este método puede tirar una excepcion no tratada por eso obliga a informarlo en la firma del metodo a traves del throws
         System.out.println("resultado ejercicio dividir: "+ resultado);
 
     }
@@ -75,7 +75,13 @@ public class TrabajoPractico2 {
             System.out.println(" Excepción: " + ex);
         }
     }
-    // se crea una escepcion que no está capturada entonces debe informarse ne la firma del metodo a través del throws
+    
+    /**
+     * se crea una escepcion que no está capturada entonces debe informarse ne la firma del metodo a través del throws
+     * y no está tratada por eso se informa en la firma del método con "throws tipo de excepcion"
+     * @throws Exception 
+     */
+    
     public void ejercicio4() throws Exception {  //tengo que poner el throws para informar que este metodo tira una excepción. si estuvieraa atrapada (try_catch) no haría falta el throws
         System.out.println("Título EJERCICIO 4 ");
         System.out.println("Generando una excepcion");
@@ -84,6 +90,7 @@ public class TrabajoPractico2 {
 
     /**
      * Excepcion Propia
+     * y está tratada con un try catch (por eso no hace falta informarla en la firma del metodo)
      */
     public void ejercicio5() {
         System.out.println("Título EJERCICIO 5 ");
